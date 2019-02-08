@@ -2,36 +2,49 @@
 
 using namespace std;
 
-int reverseArray(int &array[], int size);
+void reverseArray(int array[], int size);
 
 int main()
 {
   int size = 5;
-  int myarray[10,20,30,40,50];
+  int myarray[size];
+
+  cout<<"Enter 5 numbers into the array."<<endl;
+  for (int l= 0; l<size; l++)
+  {
+    cin >> myarray[l];
+  }
+
   cout<<"Array before reversal: "<<endl;
   for (int i = 0; i<size; i++)
   {
-    cout << myarray[i]<<" ";
+    cout << myarray[i] <<" ";
   }
-  cout<<endl;
-  reverseArray(&myarray[], size);
+  cout<< endl;
+
+  reverseArray(myarray, size);
+
   cout<<"Array after reversal: "<<endl;
   for (int j = 0; j<size; j++)
   {
-    cout<<myarray[i]<<" ";
+    cout<< myarray[j]<< " ";
   }
+  cout<<endl;
 
   return 0;
 }
 
-int reverseArray(int &array[], int size)
+void reverseArray(int array[],int size)
 {
   int tempsize = size -1;
   int temparray[size];
   for (int k=0; k<size; k++)
   {
-    temparray[tempsize] = myarray[i];
+    temparray[k] = array[k];
+  }
+  for (int i=0;i<size;i++)
+  {
+    array[tempsize] = temparray[i];
     tempsize--;
   }
-  return myarray[];
 }
